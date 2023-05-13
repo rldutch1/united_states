@@ -692,6 +692,7 @@ SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 /*!50001 CREATE VIEW `vw_presidents_with_multiple_vps` AS SELECT
  1 AS `pres_id`,
+  1 AS `name`,
   1 AS `number_of_vps` */;
 SET character_set_client = @saved_cs_client;
 
@@ -869,7 +870,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb3_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`rob`@`%` SQL SECURITY DEFINER */
-/*!50001 VIEW `vw_presidents_with_multiple_vps` AS select `vw_pres_and_vicepres`.`id` AS `pres_id`,count(0) AS `number_of_vps` from `vw_pres_and_vicepres` group by `vw_pres_and_vicepres`.`id` having `number_of_vps` > 1 */;
+/*!50001 VIEW `vw_presidents_with_multiple_vps` AS select `vw_pres_and_vicepres`.`id` AS `pres_id`,concat(`vw_pres_and_vicepres`.`firstname`,' ',`vw_pres_and_vicepres`.`middlename`,' ',`vw_pres_and_vicepres`.`lastname`) AS `name`,count(0) AS `number_of_vps` from `vw_pres_and_vicepres` group by `vw_pres_and_vicepres`.`id` having `number_of_vps` > 1 */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -919,4 +920,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-05-13 10:44:27
+-- Dump completed on 2023-05-13 15:55:47
