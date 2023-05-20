@@ -10,7 +10,7 @@
 </script>
 </head>
 <body>
-<div id="bingo">
+<div id="cic">
 <script>
 var total_length = presData.length;
 var total_lengthm = (total_length - total_length +1);
@@ -31,7 +31,8 @@ for (r = 0; r < firstObj_lngth; r++) {
 presidents += "</tr>";
   for (r = 0; r < total_length; r++) {
     presidents +="<tr id='" + presData[r].id + "'>";
-      		presidents +="<td>" + presData[r].name + "</td>";//Publish items from the array.
+      		presidents +="<td>" + presData[r].id + "</td>";//Publish items from the array.
+      		presidents +="<td>" + presData[r].name + "</td>";
       		presidents +="<td>" + presData[r].birth + "</td>";
       		presidents +="<td>" + presData[r].death + "</td>";
       		presidents +="<td>" + presData[r].presidency_start + "</td>";
@@ -45,7 +46,7 @@ presidents += "</tr>";
     //console.log(presData[r].name);
   }
 presidents += "</table>";
-document.getElementById("bingo").innerHTML = presidents;
+document.getElementById("cic").innerHTML = presidents;
 </script>
 <br />
 <br />
